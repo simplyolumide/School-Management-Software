@@ -1,0 +1,163 @@
+<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Schoolmanagement.Presentation.frmstudentclass"
+    Title="Dbo.Studentclass" Height="238" Width="916" WindowStartupLocation="Manual" WindowStyle="ThreeDBorderWindow" Icon="/Schoolmanagement;component/Images/application.ico" Loaded="frmstudentclass_Loaded">
+    <Grid>
+        <DockPanel>
+            <ToolBar DockPanel.Dock="Top"
+				VerticalAlignment="Top"
+				HorizontalAlignment="Stretch">
+                <DockPanel>
+                    <Button x:Name="tbiAdd" Height="38" Width="100" Click="tbiAdd_Click">
+                        <DockPanel>
+                            <Image Source="/Schoolmanagement;component/Images/add.png" Height="32" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            <Label Content="Add" Height="32" FontSize="16" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+                        </DockPanel>
+                    </Button>
+                    <Button x:Name="tbiEdit" Height="38" Width="100" Click="tbiEdit_Click">
+                        <DockPanel>
+                            <Image Source="/Schoolmanagement;component/Images/edit.png" Height="32" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            <Label Content="Edit" Height="32" FontSize="16" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+                        </DockPanel>
+                    </Button>
+                    <Button x:Name="tbiDelete" Height="38" Width="100" Click="tbiDelete_Click">
+                        <DockPanel>
+                            <Image Source="/Schoolmanagement;component/Images/delete.png" Height="32" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            <Label Content="Delete" Height="32" FontSize="16" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+                        </DockPanel>
+                    </Button>
+                    <Label Height="38" Width="12" />
+                    <Button x:Name="tbiApply" Height="38" Width="100" Click="tbiApply_Click">
+                        <DockPanel>
+                            <Image Source="/Schoolmanagement;component/Images/check.png" Height="32" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            <Label Content="Save" Height="32" FontSize="16" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+                        </DockPanel>
+                    </Button>
+                    <Button x:Name="tbiCancel" Height="38" Width="100" Click="tbiCancel_Click">
+                        <DockPanel>
+                            <Image Source="/Schoolmanagement;component/Images/cancel.png" Height="32" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            <Label Content="Cancel" Height="32" FontSize="16" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+                        </DockPanel>
+                    </Button>
+                    <Label Height="38" Width="12" />
+                    <Grid>
+                        <ComboBox x:Name="cbExport" Height="38" Width="109" SelectionChanged="cbExport_SelectionChanged">
+                            <ComboBoxItem x:Name="cbiExport" IsSelected="True" Visibility="Collapsed">
+                                <DockPanel>
+                                    <Image Source="/Schoolmanagement;component/Images/export.png" Height="32" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                    <Label Content="Export" Height="32" FontSize="16" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+                                </DockPanel>
+                            </ComboBoxItem>
+                            <ComboBoxItem x:Name="cbiPDF">
+                                <DockPanel>
+                                    <Image Source="/Schoolmanagement;component/Images/pdf.png" Height="32" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                    <Label Content="PDF" Height="32" FontSize="16" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+                                </DockPanel>
+                            </ComboBoxItem>
+                            <ComboBoxItem x:Name="cbiExcel">
+                                <DockPanel>
+                                    <Image Source="/Schoolmanagement;component/Images/excel.png" Height="32" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                    <Label Content="Excel" Height="32" FontSize="16" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+                                </DockPanel>
+                            </ComboBoxItem>
+                            <ComboBoxItem x:Name="cbiWord">
+                                <DockPanel>
+                                    <Image Source="/Schoolmanagement;component/Images/word.png" Height="32" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                    <Label Content="Word" Height="32" FontSize="16" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+                                </DockPanel>
+                            </ComboBoxItem>
+                        </ComboBox>
+                    </Grid>
+                    <Label Height="38" Width="12" />
+                    <Button x:Name="tbiRefresh" Height="38" Width="100" Click="tbiRefresh_Click">
+                        <DockPanel>
+                            <Image Source="/Schoolmanagement;component/Images/refresh.png" Height="32" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            <Label Content="Refresh" Height="32" FontSize="16" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+                        </DockPanel>
+                    </Button>
+                    <Button x:Name="tbiClose" Height="38" Width="100" Click="tbiClose_Click">
+                        <DockPanel>
+                            <Image Source="/Schoolmanagement;component/Images/close.png" Height="32" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            <Label Content="Close" Height="32" FontSize="16" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+                        </DockPanel>
+                    </Button>
+                    <Label />
+                </DockPanel>
+            </ToolBar>
+            <TabControl SelectionChanged="TabControl_SelectionChanged" Background="#FFFF9999">
+                <TabItem x:Name="tiGrid" Header="Grid">
+                    <DockPanel DockPanel.Dock="Top"
+				VerticalAlignment="Top"
+				HorizontalAlignment="Stretch">
+                        <Grid DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="3" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5" />
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="115" />
+                                <ColumnDefinition Width="5" />
+                            </Grid.ColumnDefinitions>
+                            <ComboBox x:Name="cmbFields" Grid.Row="0" Grid.Column="1" Margin="3" Height="35" FontSize="16" VerticalContentAlignment="Center"/>
+                            <ComboBox x:Name="cmbCondition" Grid.Row="0" Grid.Column="2" Margin="3" Height="35" FontSize="16" VerticalContentAlignment="Center"/>
+                            <TextBox x:Name="txtSearch" Grid.Row="0" Grid.Column="3" Margin="3" Height="35" FontSize="16" VerticalContentAlignment="Center"/>
+                            <Button x:Name="butSearch" Click="butSearch_Click" Grid.Row="0" Grid.Column="4" Margin="3" Height="35" FontSize="16" VerticalContentAlignment="Center">
+                                <DockPanel>
+                                    <Image Source="/Schoolmanagement;component/Images/search.png" Height="32" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                    <Label Content="Search" Height="32" FontSize="16" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+                                </DockPanel>
+                            </Button>
+                            <Button x:Name="butShowAll" Click="butShowAll_Click" Grid.Row="0" Grid.Column="5" Margin="3" Height="35" FontSize="16" VerticalContentAlignment="Center">
+                                <DockPanel>
+                                    <Image Source="/Schoolmanagement;component/Images/showall.png" Height="32" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                    <Label Content="Show All" Height="32" FontSize="16" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+                                </DockPanel>
+                            </Button>
+                        </Grid>
+                        <DataGrid x:Name="Grid" FontSize="16" RowHeight="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" AlternatingRowBackground="LightYellow" >
+                            <DataGrid.Resources>
+                                <Style x:Key="rightAlignment" TargetType="{x:Type TextBlock}">
+                                    <Setter Property="TextAlignment" Value="Right"/>
+                                </Style>
+                            </DataGrid.Resources>
+                        </DataGrid>
+                    </DockPanel>
+                </TabItem>
+                <TabItem x:Name="tiDetail" Header="Detail">
+                    <DockPanel>
+                        <Grid DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="10" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="200" />
+                                <ColumnDefinition Width="20" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="200" />
+                                <ColumnDefinition Width="5" />
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="lblClassId" Grid.Row="1" Grid.Column="1" Content="Class ID" Height="35" FontSize="16" VerticalContentAlignment="Center"/>
+                            <TextBox x:Name="nudClassId" Grid.Row="1" Grid.Column="2" Margin="3" Height="35" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"
+                                    IsEnabled="False"
+                            ></TextBox>
+                            <Label x:Name="lblClassName" Grid.Row="1" Grid.Column="4" Content="Class Name" Height="35" FontSize="16" VerticalContentAlignment="Center"/>
+                            <TextBox x:Name="tbClassName" Grid.Row="1" Grid.Column="5" Margin="3" Height="35" FontSize="16" VerticalContentAlignment="Center"
+                            ></TextBox>
+                        </Grid>
+                    </DockPanel>
+                </TabItem>
+            </TabControl>
+        </DockPanel>
+    </Grid>
+</Window>
+ 

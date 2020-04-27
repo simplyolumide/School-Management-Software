@@ -1,0 +1,24 @@
+<Window x:Class="Schoolmanagement.Presentation.frmMain"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="School Management Software" Height="300" Width="300" WindowState="Maximized" WindowStyle="ThreeDBorderWindow" Icon="/Schoolmanagement;component/Images/application.ico">
+    <Grid>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top" IsMainMenu="True" Background="#FFFF9999">
+            <MenuItem Header="File" Height="32" FontSize="16">
+                <MenuItem x:Name="Exit" Header="Exit" Height="32" FontSize="16" Click="Exit_Click" />
+                </MenuItem>
+                <MenuItem Header="Menu" Height="32" FontSize="16">
+                    <MenuItem x:Name="Exam" Header="Exam" Height="32" FontSize="16" Click="exam_Click" />
+                    <MenuItem x:Name="Result" Header="Result" Height="32" FontSize="16" Click="result_Click" />
+                    <MenuItem x:Name="Student_Class" Header="Student Class" Height="32" FontSize="16" Click="studentclass_Click" />
+                    <MenuItem x:Name="Student_Registration" Header="Students" Height="32" FontSize="16" Click="students_Click" />
+                    <MenuItem x:Name="Teacher" Header="Teacher" Height="32" FontSize="16" Click="teacher_Click" />
+                </MenuItem>
+                <MenuItem Header="Help" Height="32" FontSize="16" Click="MenuItem_Click">
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+    </Grid>
+</Window>
+ 
